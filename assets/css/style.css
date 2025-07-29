@@ -118,7 +118,7 @@ nav {
 /* Hero */
 .hero {
   height: 100vh;
-  background: url('./images/paisaje.jpg') no-repeat center center/cover;
+  background: url('images/paisaje.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
