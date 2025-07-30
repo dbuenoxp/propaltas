@@ -13,85 +13,84 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 const track = document.getElementById('carousel-track');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-let index = 0;
+let cards = document.querySelectorAll('.carousel-card');
+const cardWidth = cards[0].offsetWidth;
+let index = 1;
 let autoplayInterval;
-let isDragging = false;
-let startX = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID;
-const cards = document.querySelectorAll('.carousel-card');
-let visibleCards = getVisibleCards();
+let isTransitioning = false;
 
-// Detectar cuántos cards se ven por pantalla
-function getVisibleCards() {
-  const width = window.innerWidth;
-  if (width <= 600) return 1;
-  if (width <= 900) return 2;
-  return 3;
-}
+const firstClone = cards[0].cloneNode(true);
+const lastClone = cards[cards.length - 1].cloneNode(true);
+firstClone.id = 'first-clone';
+lastClone.id = 'last-clone';
 
-// Actualizar posición
+track.appendChild(firstClone);
+track.insertBefore(lastClone, cards[0]);
+
+cards = document.querySelectorAll('.carousel-card'); 
+
+track.style.transform = `translateX(-${cardWidth * index}px)`;
+
 function updateCarousel() {
-  const cardWidth = cards[0].offsetWidth;
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
+  if (isTransitioning) return;
+  isTransitioning = true;
+  track.style.transition = 'transform 0.5s ease-in-out';
+  track.style.transform = `translateX(-${cardWidth * index}px)`;
 }
 
-// Botones
-nextBtn.addEventListener('click', () => {
-  index = (index + 1) % (cards.length - visibleCards + 1);
-  updateCarousel();
+track.addEventListener('transitionend', () => {
+ const currentCard = cards[index];
+
+  if (currentCard && currentCard.id === 'first-clone') {
+    track.style.transition = 'none';
+    index = 1;
+    track.style.transform = `translateX(-${cardWidth * index}px)`;
+  } else if (currentCard && currentCard.id === 'last-clone') {
+    track.style.transition = 'none';
+    index = cards.length - 2;
+    track.style.transform = `translateX(-${cardWidth * index}px)`;
+  }
+
+  setTimeout(() => {
+    track.style.transition = 'transform 0.5s ease-in-out';
+  }, 20);
+  
+  isTransitioning = false;
 });
 
-prevBtn.addEventListener('click', () => {
-  index = (index - 1 + (cards.length - visibleCards + 1)) % (cards.length - visibleCards + 1);
-  updateCarousel();
-});
 
-// Autoplay
 function startAutoplay() {
-  autoplayInterval = setInterval(() => {
-    index = (index + 1) % (cards.length - visibleCards + 1);
-    updateCarousel();
-  }, 2000);
+   if (autoplayInterval) return; 
+    autoplayInterval = setInterval(() => {
+      index++;
+      updateCarousel();
+    }, 3000);
 }
-
 function stopAutoplay() {
   clearInterval(autoplayInterval);
 }
 
-startAutoplay();
-
-// Pausar autoplay al pasar el mouse
 track.addEventListener('mouseenter', stopAutoplay);
 track.addEventListener('mouseleave', startAutoplay);
+startAutoplay();
 
-// 🖱️ Drag con el mouse (Desktop)
+let isDragging = false;
+let startX = 0;
+
 track.addEventListener('mousedown', (e) => {
   isDragging = true;
   startX = e.pageX;
   track.classList.add('grabbing');
-  prevTranslate = getTranslateX();
 });
-
 track.addEventListener('mouseup', (e) => {
   if (!isDragging) return;
   isDragging = false;
   const deltaX = e.pageX - startX;
-  const threshold = cards[0].offsetWidth / 4;
-
-  if (deltaX < -threshold && index < cards.length - visibleCards) {
-    index++;
-  } else if (deltaX > threshold && index > 0) {
-    index--;
-  }
+  if (deltaX < -cardWidth / 4 && index < cards.length - 1) index++;
+  else if (deltaX > cardWidth / 4 && index > 0) index--;
   updateCarousel();
   track.classList.remove('grabbing');
 });
-
 track.addEventListener('mouseleave', () => {
   if (isDragging) {
     isDragging = false;
@@ -100,11 +99,9 @@ track.addEventListener('mouseleave', () => {
   }
 });
 
-// 📱 Touch events para móvil
 track.addEventListener('touchstart', (e) => {
   isDragging = true;
   startX = e.touches[0].clientX;
-  prevTranslate = getTranslateX();
 }, { passive: true });
 
 track.addEventListener('touchend', (e) => {
@@ -112,30 +109,43 @@ track.addEventListener('touchend', (e) => {
   isDragging = false;
   const endX = e.changedTouches[0].clientX;
   const deltaX = endX - startX;
-  const threshold = cards[0].offsetWidth / 4;
-
-  if (deltaX < -threshold && index < cards.length - visibleCards) {
-    index++;
-  } else if (deltaX > threshold && index > 0) {
-    index--;
-  }
+  if (deltaX < -cardWidth / 4 && index < cards.length - 1) index++;
+  else if (deltaX > cardWidth / 4 && index > 0) index--;
   updateCarousel();
-});
-
-track.addEventListener('touchmove', (e) => {
-  // Puedes dejarlo vacío si no haces animación en tiempo real
 }, { passive: true });
 
-// Obtener posición actual del carrusel
-function getTranslateX() {
-  const style = window.getComputedStyle(track);
-  const matrix = new WebKitCSSMatrix(style.transform);
-  return matrix.m41;
-}
-
-// Resize actualiza todo
 window.addEventListener('resize', () => {
-  visibleCards = getVisibleCards();
-  index = 0;
-  updateCarousel();
+  cardWidth = cards[0].offsetWidth;
+  track.style.transition = 'none';
+  track.style.transform = `translateX(-${cardWidth * index}px)`;
+});
+
+
+const navbar = document.getElementById('main-header');
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > 200) {
+    scrollTopBtn.classList.add('show');
+  } else {
+    scrollTopBtn.classList.remove('show');
+  }
+
+  if (currentScroll > lastScrollY) {
+    navbar.classList.add('hide-navbar');
+  } else {
+    navbar.classList.remove('hide-navbar');
+  }
+
+  lastScrollY = currentScroll;
+});
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });

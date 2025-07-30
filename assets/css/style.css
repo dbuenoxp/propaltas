@@ -45,14 +45,25 @@ h1, h2, h3, h4, h5, h6 {
   margin: auto;
 }
 
-/* Header */
 header {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #d3d6cf;
+  transition: transform 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  /* position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   background: #d3d6cf;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+header.hide-navbar {
+  transform: translateY(-100%);
 }
 
 .topbar {
@@ -209,7 +220,7 @@ h2 {
 }
 
 .principios {
-  background-color: #d3d6cf;
+  background-color: #f6f6f6;
 }
 
 .principios h2 {
@@ -225,6 +236,27 @@ h2 {
   gap: 2rem;
 }
 
+.titulo-decorado {
+  font-family: 'Darker Grotesque', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2e7d32; /* verde oscuro institucional */
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.titulo-decorado::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 14%;
+    transform: translateX(-50%);
+    width: 28%;
+    height: 20px;
+    background-color: #96C063;
+}
+
 .principio {
   background-color: #e8f5e9;
   padding: 1.5rem;
@@ -233,6 +265,7 @@ h2 {
   text-align: center;
   transition: transform 0.3s;
   overflow: hidden;
+  border-style: solid;
 }
 
 .card-inner {
@@ -259,12 +292,51 @@ h2 {
   color: #344924;
 }
 
+
+.entidad {
+  background-color: #d3d6cf;
+}
+
+.entidad h2 {
+  text-align: left;
+  color: #344924;
+  margin-bottom: 2rem;
+  font-size: 48px;
+}
+
+.entidad-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.entidad-texto {
+  flex: 1 1 50%;
+  font-size: 1rem;
+  color: #344924;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.entidad-imagen {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.entidad-imagen img {
+  max-width: 100%;
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 .productos {
   background-color: #d3d6cf;
 }
 
 .productos h2 {
-  text-align: center;
+  text-align: left;
   color: #344924;
   margin-bottom: 2rem;
   font-size: 48px;
@@ -479,25 +551,23 @@ footer {
 }
 .carousel-track {
     display: flex;
-      transition: transform 0.5s ease-in-out;
-  cursor: grab;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-card {
-  flex: 0 0 33.333%;
+  flex: 0 0 100%; 
   padding: 0 10px;
   box-sizing: border-box;
 }
 
 .carousel-card img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Flechas */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -525,18 +595,35 @@ footer {
   right: 10px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .carousel-card {
-    flex: 0 0 50%;
-  }
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #344924;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-@media (max-width: 600px) {
-  .carousel-card {
-    flex: 0 0 100%;
-  }
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
+
+#scrollTopBtn:hover {
+  background-color: #69795D;
+}
+
+
 
 @media (max-width: 768px) {
   .producto-content {
