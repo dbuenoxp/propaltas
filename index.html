@@ -15,9 +15,12 @@
           <div class="container topbar-content">
             <div></div> 
             <div class="idioma-selector">
-              <span id="es" class="idioma activo"><img class="trp-flag-image" src="assets/images/peru.png" width="18" height="12" alt="es_PE" title="Español de Perú"> ES</span> |
+              <span id="es" class="idioma activo">
+                <!-- <img class="trp-flag-image" src="assets/images/peru.png" width="18" height="12" alt="es_PE" title="Español de Perú">  -->
+                ES</span> |
               <span id="en" class="idioma">
-                <img class="trp-flag-image" src="assets/images/USA.png" width="18" height="12" alt="en_EUS" title="English"> EN</span>
+                <!-- <img class="trp-flag-image" src="assets/images/USA.png" width="18" height="12" alt="en_EUS" title="English">  -->
+                EN</span>
             </div>
           </div>
         </div>
@@ -116,6 +119,44 @@
     </div>
   </section>
 
+  <section id="galeria" class="section galeria">
+  <div class="container">
+    <h2>Galería de Fotos</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" id="prevBtn">‹</button>
+      <div class="carousel-track" id="carousel-track">
+        <!-- 6 cards -->
+      <!-- Card 1 -->
+          <div class="carousel-card">
+            <img src="assets/images/arando.jpg" alt="Imagen 1">
+          </div>
+          <!-- Card 2 -->
+          <div class="carousel-card">
+            <img src="assets/images/paltaHass.png" alt="Imagen 2">
+          </div>
+          <!-- Card 3 -->
+          <div class="carousel-card">
+            <img src="assets/images/nosotros.jpg" alt="Imagen 3">
+          </div>
+          <!-- Card 4 -->
+          <div class="carousel-card">
+            <img src="assets/images/cultivo.jpg" alt="Imagen 4">
+          </div>
+          <!-- Card 5 -->
+          <div class="carousel-card">
+            <img src="assets/images/transporte.jpg" alt="Imagen 5">
+          </div>
+          <!-- Card 6 -->
+          <div class="carousel-card">
+            <img src="assets/images/consumo.jpg" alt="Imagen 6">
+          </div>
+      </div>
+      <button class="carousel-btn right" id="nextBtn">›</button>
+    </div>
+  </div>
+</section>
+
+
   <section id="productos" class="section productos" data-aos="fade-up">
     <div class="container">
       <h2>Palta Hass Natural</h2>
@@ -133,7 +174,7 @@
           <p><em>Disponibles en temporada y bajo pedido especial.</em></p>
         </div>
         <div class="producto-imagen" data-aos="fade-left">
-          <img src="assets/images/paltashass.jpg" alt="Palta Hass">
+          <img class="prod" src="assets/images/paltaHasssv2.png" alt="Palta Hass">
         </div>
       </div>
     </div>
@@ -146,22 +187,38 @@
   
       <div class="grid-comercializacion" data-aos="fade-right">
         <div class="item-com">
-          <h3>Producción Responsable</h3>
-          <p>
-            Cultivamos paltas con métodos tradicionales y certificaciones internacionales que aseguran calidad y sostenibilidad desde el origen.
-          </p>
+          <div class="card-img">
+                <img src="assets/images/cultivo.jpg" alt="Cultivo">
+          </div>
+          <div class="card-texto">
+              <h3>Producción Responsable</h3>
+              <p>
+                Cultivamos paltas con métodos tradicionales y certificaciones internacionales que aseguran calidad y sostenibilidad desde el origen.
+              </p>
+          </div>
+        </div>
+       
+        <div class="item-com">
+            <div class="card-img">
+              <img src="assets/images/transporte.jpg" alt="logistica">
+            </div>
+            <div class="card-texto">
+              <h3>Logística y Alianzas</h3>
+              <p>
+                Transportamos bajo condiciones óptimas y en alianza con <strong>FRUCHINCHA S.A.C.</strong>, llevando nuestras paltas a mercados nacionales e internacionales.
+              </p>
+            </div>
         </div>
         <div class="item-com">
-          <h3>Logística y Alianzas</h3>
-          <p>
-            Transportamos bajo condiciones óptimas y en alianza con <strong>FRUCHINCHA S.A.C.</strong>, llevando nuestras paltas a mercados nacionales e internacionales.
-          </p>
-        </div>
-        <div class="item-com">
-          <h3>Consumo de Calidad</h3>
-          <p>
-            Palta Hass lista para comer: fresca, sabrosa y 100% natural, directa desde nuestras comunidades a tu mesa.
-          </p>
+          <div class="card-img">
+            <img src="assets/images/consumo.jpg" alt="Consumo">
+          </div>
+          <div class="card-texto">
+              <h3>Consumo de Calidad</h3>
+              <p>
+                Palta Hass lista para comer: fresca, sabrosa y 100% natural, directa desde nuestras comunidades a tu mesa.
+              </p>
+          </div>
         </div>
       </div>
     </div>
