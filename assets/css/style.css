@@ -30,7 +30,7 @@
 
 body {
   font-family: 'DM Sans', sans-serif;
-  color: #333;
+  color: #344924;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,10 +75,11 @@ header {
   position: relative;
 }
 
-.logo {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #2e7d32;
+
+.logo img {
+  height: 100px; 
+  width: auto;
+  display: block;
 }
 
 nav {
@@ -99,19 +100,19 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #333;
+  color: #344924;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #2e7d32;
+  color: #96C063;
 }
 
 .menu-toggle {
   display: none;
   font-size: 2rem;
-  color: #2e7d32;
+  color: #96C063;
   cursor: pointer;
 }
 
@@ -122,6 +123,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .overlay {
@@ -165,14 +167,14 @@ h2 {
 }
 
 .nosotros {
-  background-color: #f8f8f8;
+  background-color: #d3d6cf;
 }
 
 .nosotros h2 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #2e7d32;
+  color: #344924;
 }
 
 .nosotros .intro {
@@ -186,19 +188,19 @@ h2 {
   margin: 0 auto 1rem auto;
   line-height: 1.8;
   font-size: 1rem;
-  color: #444;
+  color: #344924;
   text-align: justify;
 }
 
 .principios {
-  background-color: #fff;
+  background-color: #f8f8f8;
 }
 
 .principios h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #2e7d32;
+  color: #344924;
 }
 
 .grid-principios {
@@ -208,7 +210,7 @@ h2 {
 }
 
 .principio {
-  background-color: #f1f8e9;
+  background-color: #e8f5e9;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -231,23 +233,23 @@ h2 {
 
 
 .principio h3 {
-  color: #33691e;
+  color: #344924;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
 .principio p {
   font-size: 0.95rem;
-  color: #555;
+  color: #344924;
 }
 
 .productos {
-  background-color: #f8f8f8;
+  background-color: #d3d6cf;
 }
 
 .productos h2 {
   text-align: center;
-  color: #2e7d32;
+  color: #344924;
   margin-bottom: 2rem;
   font-size: 2rem;
 }
@@ -263,7 +265,7 @@ h2 {
 .producto-texto {
   flex: 1 1 50%;
   font-size: 1rem;
-  color: #444;
+  color: #344924;
   line-height: 1.8;
   text-align: justify;
 }
@@ -280,13 +282,13 @@ h2 {
 }
 
 .comercializacion {
-  background-color: #fff;
+  background-color: #f8f8f8;
 }
 
 .comercializacion h2 {
   text-align: center;
   font-size: 2rem;
-  color: #2e7d32;
+  color: #344924;
   margin-bottom: 1rem;
 }
 
@@ -294,7 +296,7 @@ h2 {
   text-align: center;
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #555;
+  color: #344924;
 }
 
 .grid-comercializacion {
@@ -307,7 +309,7 @@ h2 {
   background-color: #e8f5e9;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
@@ -316,7 +318,7 @@ h2 {
 }
 
 .item-com h3 {
-  color: #33691e;
+  color: #344924;
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
 }
@@ -324,23 +326,23 @@ h2 {
 .item-com p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #444;
+  color: #344924;
 }
 
 .contacto {
-  background-color: #f8f8f8;
+  background-color: #d3d6cf;
   text-align: center;
 }
 
 .contacto h2 {
   font-size: 2rem;
-  color: #2e7d32;
+  color: #344924;
   margin-bottom: 1rem;
 }
 
 .contacto p {
   font-size: 1.1rem;
-  color: #555;
+  color: #344924;
   margin-bottom: 1.5rem;
 }
 
@@ -348,7 +350,7 @@ h2 {
   list-style: none;
   padding: 0;
   font-size: 1rem;
-  color: #444;
+  color: #344924;
   line-height: 1.8;
 }
 
@@ -357,7 +359,7 @@ h2 {
 }
 
 .info-contacto a {
-  color: #2e7d32;
+  color: #344924;
   text-decoration: none;
 }
 
@@ -370,7 +372,7 @@ h2 {
   align-items: center;
   gap: 10px;
   font-weight: bold;
-  color: #333;
+  color: #344924;
 }
 .idioma {
   cursor: pointer;
@@ -381,13 +383,13 @@ h2 {
 .idioma:hover,
 .idioma.activo {
   opacity: 1;
-  color: #2e7d32;
+  color: #96C063;
 }
 
 
 /* Footer */
 footer {
-  background-color: #2e7d32;
+  background-color: #344924;
   color: #fff;
   text-align: center;
   padding: 1rem 0;
