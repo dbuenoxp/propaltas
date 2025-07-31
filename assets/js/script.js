@@ -11,6 +11,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     }
   });
 });
+
 window.onload = () => {
   const track = document.getElementById('carousel-track');
   let cards = document.querySelectorAll('.carousel-card');
