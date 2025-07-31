@@ -11,7 +11,7 @@
       productos: 'Productos',
       comercializacion: 'Comercialización',
       contacto: 'Contacto',
-      heroTitulo: 'Palta Hass desde el corazón de los Andes peruanos',
+      tituloPalta: 'Palta Hass desde el corazón de los Andes peruanos',
       heroTexto: 'Cultivamos nuestra tierra con técnicas ecoamigables, respetando el entorno andino y aplicando Buenas Prácticas Agrícolas. Gracias a este compromiso, hoy contamos con la certificación internacional GLOBAL G.A.P., lo que nos permite comercializar palta de calidad en el mercado internacional, en alianza estratégica con empresas exportadoras, promoviendo el desarrollo sostenible de la agricultura familiar en el Valle de Torobamba.',
       seccionNosotros: 'Nosotros',
       nosotrostext: 'Somos la Asociación Central de Productores Agropecuarios del Valle de Torobamba, legalmente constituida en 2024. Reunimos a más de 120 pequeños agricultores de palta hass ubicados en los distritos de San Miguel, Patibamba y Ninabamba, en Ayacucho.',
@@ -47,6 +47,7 @@
       seccionContacto: 'Contacto',
       contactoUbicacion: 'Abrir ubicación',
       siguenos: 'Síguenos:',
+      footerText: '© 2025 Asociación Central de Productores Agropecuarios del Valle de Torobamba – PROPALTAS. Todos los derechos reservados.',
     },
     en: {
       inversionista: 'Go to Investors >',
@@ -55,7 +56,7 @@
       productos: 'Products',
       comercializacion: 'Marketing',
       contacto: 'Contact',
-      heroTitulo: 'Hass Avocados from the Heart of the Peruvian Andes',
+      tituloPalta: 'Hass Avocados from the Heart of the Peruvian Andes',
       heroTexto: 'We cultivate our land using eco-friendly techniques, respecting the Andean environment and applying Good Agricultural Practices. Thanks to this commitment, we now hold the international GLOBAL G.A.P. certification, which allows us to market high-quality avocados in the international market through strategic partnerships with exporting companies, promoting the sustainable development of family farming in the Torobamba Valley.',
       seccionNosotros: 'About Us',
       nosotrostext: 'We are the Central Association of Agricultural Producers of the Torobamba Valley, legally established in 2024. We bring together over 120 small avocado farmers located in the districts of San Miguel, Patibamba, and Ninabamba in Ayacucho.',
@@ -91,6 +92,7 @@
       seccionContacto: 'Contact',
       contactoUbicacion: 'Open location',
       siguenos: 'Follow us:',
+      footerText: '© 2025 Central Association of Agricultural Producers of the Torobamba Valley – PROPALTAS. All rights reserved.',
     }
   };
   
@@ -108,8 +110,8 @@
     document.querySelector('a[href="#comercializacion"]').textContent = t.comercializacion;
     document.querySelector('a[href="#contacto"]').textContent = t.contacto;
   
-    document.querySelector('.hero-content h1').textContent = t.heroTitulo;
-    document.querySelector('.hero-content p').textContent = t.heroTexto;
+    document.querySelector('#nosotros .container-nosotros h1').textContent = t.tituloPalta;
+    document.querySelector('#nosotros .container-nosotros p').textContent = t.heroTexto;
   
     document.querySelector('#nosotros h2').textContent = t.seccionNosotros;
     document.querySelector('#nosotros #textOne').textContent = t.nosotrostext;
@@ -145,9 +147,9 @@
     document.querySelector('#comercializacion #cardComConsumo p').textContent = t.cardComConsumoText;
     document.querySelector('#contacto h2').textContent = t.seccionContacto;
     document.querySelector('#contacto #location').textContent = t.contactoUbicacion;
-    document.querySelector('.siguenos h2').textContent = t.siguenos;
+    document.querySelector('.siguenos #seguir').textContent = t.siguenos;
+    document.querySelector('footer p').textContent = t.footerText;
   
-    // Agrega más líneas para los demás textos si lo deseas
   }
   
   // Eventos
