@@ -12,13 +12,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+ 
 const track = document.getElementById('carousel-track');
 let cards = document.querySelectorAll('.carousel-card');
-const cardWidth = cards[0].offsetWidth;
+let cardWidth = cards[0].offsetWidth;
 let index = 1;
 let autoplayInterval;
 let isTransitioning = false;
 
+// Clonar extremos
 const firstClone = cards[0].cloneNode(true);
 const lastClone = cards[cards.length - 1].cloneNode(true);
 firstClone.id = 'first-clone';
@@ -27,10 +30,11 @@ lastClone.id = 'last-clone';
 track.appendChild(firstClone);
 track.insertBefore(lastClone, cards[0]);
 
-cards = document.querySelectorAll('.carousel-card'); 
+cards = document.querySelectorAll('.carousel-card');
 
 track.style.transform = `translateX(-${cardWidth * index}px)`;
 
+// Actualiza carrusel
 function updateCarousel() {
   if (isTransitioning) return;
   isTransitioning = true;
@@ -38,8 +42,9 @@ function updateCarousel() {
   track.style.transform = `translateX(-${cardWidth * index}px)`;
 }
 
+// Corrige clones al llegar al final o inicio
 track.addEventListener('transitionend', () => {
- const currentCard = cards[index];
+  const currentCard = cards[index];
 
   if (currentCard && currentCard.id === 'first-clone') {
     track.style.transition = 'none';
@@ -54,70 +59,35 @@ track.addEventListener('transitionend', () => {
   setTimeout(() => {
     track.style.transition = 'transform 0.5s ease-in-out';
   }, 20);
-  
+
   isTransitioning = false;
 });
 
-
+// Autoplay
 function startAutoplay() {
-   if (autoplayInterval) return; 
-    autoplayInterval = setInterval(() => {
-      index++;
-      updateCarousel();
-    }, 3000);
+  if (autoplayInterval) return;
+  autoplayInterval = setInterval(() => {
+    index++;
+    updateCarousel();
+  }, 3000);
 }
+
 function stopAutoplay() {
   clearInterval(autoplayInterval);
+  autoplayInterval = null;
 }
 
 track.addEventListener('mouseenter', stopAutoplay);
 track.addEventListener('mouseleave', startAutoplay);
 startAutoplay();
 
-let isDragging = false;
-let startX = 0;
-
-track.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  startX = e.pageX;
-  track.classList.add('grabbing');
-});
-track.addEventListener('mouseup', (e) => {
-  if (!isDragging) return;
-  isDragging = false;
-  const deltaX = e.pageX - startX;
-  if (deltaX < -cardWidth / 4 && index < cards.length - 1) index++;
-  else if (deltaX > cardWidth / 4 && index > 0) index--;
-  updateCarousel();
-  track.classList.remove('grabbing');
-});
-track.addEventListener('mouseleave', () => {
-  if (isDragging) {
-    isDragging = false;
-    updateCarousel();
-    track.classList.remove('grabbing');
-  }
-});
-
-track.addEventListener('touchstart', (e) => {
-  isDragging = true;
-  startX = e.touches[0].clientX;
-}, { passive: true });
-
-track.addEventListener('touchend', (e) => {
-  if (!isDragging) return;
-  isDragging = false;
-  const endX = e.changedTouches[0].clientX;
-  const deltaX = endX - startX;
-  if (deltaX < -cardWidth / 4 && index < cards.length - 1) index++;
-  else if (deltaX > cardWidth / 4 && index > 0) index--;
-  updateCarousel();
-}, { passive: true });
-
+// Resize actualiza ancho
 window.addEventListener('resize', () => {
   cardWidth = cards[0].offsetWidth;
   track.style.transition = 'none';
   track.style.transform = `translateX(-${cardWidth * index}px)`;
+});
+
 });
 
 

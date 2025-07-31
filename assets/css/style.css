@@ -26,11 +26,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+   /* outline: 1px solid rgba(255, 0, 0, 0.1); */
 }
+
+.hero,
+.nosotros-img {
+  min-height: 100vh;
+  height: auto;
+}
+
+/* html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+} */
 
 body {
   font-family: 'DM Sans', sans-serif;
   color: #344924;
+    max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -134,12 +148,19 @@ nav {
 
 /* Hero */
 .hero {
-  height: 100vh;
+  min-height: 100dvh;
+  height: 100%;
   background: url('../images/paisaje.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.hero,
+.section {
+  padding-top: 100px;
 }
 
 .overlay {
@@ -244,7 +265,6 @@ h2 {
   font-size: 2.2rem;
   font-weight: 700;
   text-align: center;
-  color: #2e7d32; /* verde oscuro institucional */
   position: relative;
   margin-bottom: 2rem;
 }
@@ -253,9 +273,9 @@ h2 {
     content: '';
     position: absolute;
     bottom: -30px;
-    left: 14%;
+    left: 18%;
     transform: translateX(-50%);
-    width: 28%;
+    width: 36%;
     height: 20px;
     background-color: #96C063;
 }
@@ -488,11 +508,6 @@ h2 {
   overflow: hidden;
 }
 
-.card-contacto h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
 .card-contacto ul {
   list-style: none;
   padding: 0;
@@ -512,16 +527,50 @@ h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.contacto h2 {
-  font-size: 48px;
+.card-contacto h2 {
   color: #344924;
   margin-bottom: 1rem;
+  text-shadow: none;
 }
 
 .contacto p {
   font-size: 1.1rem;
   color: #344924;
   margin-bottom: 1.5rem;
+}
+
+.qr-contacto {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qr-contacto:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.qr-placeholder {
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: #999;
+}
+
+.qr-placeholder::before {
+  content: "Código QR";
+}
+
+.card-contacto:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .info-contacto {
@@ -533,7 +582,26 @@ h2 {
 }
 
 .info-contacto li {
-  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.info-contacto li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.info-contacto li a {
+  color: #344924;
+  text-decoration: none;
+}
+
+.info-contacto li a:hover {
+  text-decoration: underline;
 }
 
 .info-contacto a {
@@ -543,6 +611,51 @@ h2 {
 
 .info-contacto a:hover {
   text-decoration: underline;
+}
+
+.siguenos h2{
+  text-shadow: none;
+}
+
+.siguenos {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  text-align: left;
+  grid-column: span 2;
+}
+
+.redes-sociales {
+  display: flex;
+  justify-content: left;
+  gap: 1.2rem;
+}
+
+/* .redes-sociales img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+} */
+
+.redes-sociales img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+  opacity: 0.75;
+}
+
+.redes-sociales a img {
+  display: block;
+}
+
+.redes-sociales a:hover img {
+   transform: scale(1.15);
+  filter: grayscale(0%) brightness(1.2);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .idioma-selector {
@@ -583,8 +696,9 @@ footer {
 }
 
 .carousel-wrapper {
+    overflow: hidden;
+  width: 100%;
   position: relative;
-  overflow: hidden;
 }
 /* 
 .carousel-track {
@@ -596,8 +710,9 @@ footer {
   cursor: grabbing;
 }
 .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
 }
 
 .carousel-card {
@@ -674,6 +789,23 @@ footer {
 
 #scrollTopBtn:hover {
   background-color: #69795D;
+}
+
+@media (max-width: 768px) {
+  .entidad-content {
+    flex-direction: column;
+  }
+
+  .entidad-texto,
+  .entidad-imagen {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .carousel-card img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @media (max-width: 768px) {
