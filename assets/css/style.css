@@ -1,4 +1,4 @@
-/* --- Darker Grotesque (títulos) --- */
+
 @font-face {
   font-family: 'Darker Grotesque';
   src: url('../fonts/DarkerGrotesque-Regular.ttf') format('truetype');
@@ -10,7 +10,6 @@
   font-weight: 700;
 }
 
-/* --- DM Sans (body) --- */
 @font-face {
   font-family: 'DM Sans';
   src: url('../fonts/DMSans-Regular.ttf') format('truetype');
@@ -43,7 +42,7 @@
 body {
   font-family: 'DM Sans', sans-serif;
   color: #344924;
-    max-width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -57,7 +56,7 @@ h1, h2{
 
 /* Contenedor general */
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: auto;
 }
@@ -87,7 +86,7 @@ header.hide-navbar {
 .topbar {
   background-color: #344924;
   padding: 5px 0;
-  font-size: 0.9rem;
+  font-size: 24px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
@@ -124,16 +123,18 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 50px;
+  gap: 80px;
   list-style: none;
 }
 
 .nav-links li a {
+  font-family: "Darker Grotesque", Helvetica;
   text-decoration: none;
   color: #344924;
   font-weight: bold;
   transition: color 0.3s ease;
-  font-size: 18px;
+  line-height: 120%;
+  font-size: 28px;
 }
 
 .nav-links li a:hover {
@@ -189,17 +190,19 @@ nav {
   margin-bottom: 1rem;
 }
 
-.titlePalta{
-    font-weight: 700;
+.inicio h1{
+    padding: 20px;
+    text-align: center;
+    font-weight: 944;
     font-size: 48px;
 }
 
-.descriptionpalta{
+.inicio p{
     font-family: "Darker Grotesque", Helvetica;
     font-weight: 600;
     font-size: 32px !important;
     text-align: center !important;
-    margin-bottom: 3rem;
+    line-height: 120% !important;
 }
 
 .container-nosotros{
@@ -234,12 +237,16 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.inicio {
+  background-color: #d3d6cf;
+}
+
 .hero-content p {
   font-size: 1.2rem;
 }
 
 .section {
-  padding: 80px 20px;
+  padding: 20px 20px;
 }
 
 .nosotros {
@@ -253,17 +260,19 @@ h2 {
   color: #344924;
 }
 
-.nosotros .intro {
-  font-size: 32px;
+/* .nosotros .intro {
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 1rem;
-}
+} */
 
 .nosotros p {
+  font-family: "DM Sans", Helvetica;
   /* max-width: 900px; */
   margin: 0 auto 1rem auto;
   line-height: 120%;
-  font-size: 1rem;
+  font-size: 24px;
+  font-weight: 500;
   color: #344924;
   text-align: center;
 }
@@ -273,32 +282,12 @@ h2 {
 }
 
 
-.titlePrincipios{
-  font-family: "Darker Grotesque", Helvetica !important;
-  font-size: 36px !important;
-  text-shadow: none !important;
-}
-
-.titleCardPrincipio{
-  font-family: "DM Sans", Helvetica !important;
-  font-weight: 700 !important;
-  font-size: 24px !important;
-  margin-bottom: 1rem !important;
-  margin-top: 1rem;
-}
-
-.subTitleCardPrincipio{
-  font-family: "DM Sans", Helvetica !important;
-  font-weight: 400 !important;
-  font-size: 24px !important;
-  margin-bottom: 4rem;
-}
-
 .principios h2 {
   text-align: center;
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 2rem;
   color: #344924;
+  text-shadow: none;
 }
 
 .grid-principios {
@@ -308,7 +297,6 @@ h2 {
 }
 
 .titulo-decorado {
-  font-family: 'Darker Grotesque', sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
   text-align: center;
@@ -351,20 +339,19 @@ h2 {
 
 
 .principio h3 {
+  font-family: "DM Sans", Helvetica;
   color: #344924;
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 24px;
+  margin-top: 1rem;
+  margin-bottom: 16px;
 }
 
 .principio p {
-  font-size: 0.95rem;
+  font-size: 24px;
   color: #344924;
-}
-
-.titleEntidad{
-  font-family: "Darker Grotesque", Helvetica !important;
-  font-size: 36px !important;
-  text-shadow: none !important;
+  line-height: 120%;
+  margin-bottom: 4rem;
 }
 
 
@@ -373,10 +360,11 @@ h2 {
 }
 
 .entidad h2 {
+  font-size: 36px;
+  text-shadow: none;
   text-align: left;
   color: #344924;
   margin-bottom: 2rem;
-  font-size: 48px;
 }
 
 .entidad-content {
@@ -388,10 +376,9 @@ h2 {
 }
 
 .entidad-texto {
-  font-family: "DM Sans", Helvetica;
   font-weight: 400;
   flex: 1 1 50%;
-  font-size: 24px !important;
+  font-size: 24px;
   color: #344924;
   line-height: 120%;
   text-align: left;
@@ -412,42 +399,30 @@ h2 {
   background-color: #f6f6f6;
 }
 
-.titleProductos{
-  font-family: "Darker Grotesque", Helvetica !important;
-  font-weight: 700 !important;
-  font-size: 36px !important;
-  text-shadow: none !important;
-}
-
-.subTitleProductos{
-  font-family: "DM Sans", Helvetica !important;
-  font-weight: 400 !important;
-  font-size: 28px !important;
-  margin-bottom: 4rem;
-}
-
 .productos h2 {
   text-align: left;
   color: #344924;
-  margin-bottom: 2rem;
-  font-size: 48px;
+  font-size: 36px;
+  text-shadow: none;
 }
 
 .producto-content {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
 }
+
 
 .producto-texto {
   flex: 1 1 50%;
-  font-size: 28px !important;
+  font-size: 24px;
   color: #344924;
   line-height: 120%;
   text-align: left;
-  margin-top: 3.5rem;
+}
+
+.producto-texto p {
+    margin-top: 3.5rem;
 }
 
 .producto-imagen {
@@ -469,26 +444,19 @@ h2 {
   background-color: #d3d6cf;
 }
 
-.titleComercializacion {
-  font-family: "Darker Grotesque", Helvetica !important;
-  font-weight: 700 !important;
-  font-size: 48px !important;
-  text-shadow: none !important;
-}
-
-.comercializacion-subtitle{
-  font-family: "DM Sans", Helvetica !important;
-  font-weight: 400 !important;
-  font-size: 28px !important;
-  margin-bottom: 4rem;
-  text-align: center;
-}
-
 .comercializacion h2 {
   text-align: center;
   font-size: 48px;
   color: #344924;
   margin-bottom: 1rem;
+  text-shadow: none;
+}
+
+.comercializacion p{
+  font-size: 28px;
+  line-height: 120%;
+  margin-bottom: 3.5rem;
+  text-align: center;
 }
 
 .intro-com {
@@ -502,6 +470,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 4rem;
+  margin-bottom: 3rem;
 }
 
 .item-com {
@@ -515,59 +484,38 @@ h2 {
   height: 100%;
 }
 
-.card-img img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
-}
-
 .card-texto {
   padding: 1rem;
   text-align: center;
 }
 
-.card-texto h3 {
-  font-family: "DM Sans", Helvetica !important;
-  font-size: 24px !important;
-  font-weight: 700;
-  color: #2e7d32;
-  margin-bottom: 0.5rem;
-}
-
-.card-texto p {
-  font-family: "DM Sans", Helvetica !important;
-  font-weight: 400;
-  font-size: 24px !important;
-  line-height: 120%;
-  color: #444;
-  margin-top: 2rem;
-}
 
 .item-com:hover {
   transform: scale(1.05);
 }
 
-
 .item-com h3 {
+  font-family: "DM Sans", Helvetica;
   color: #344924;
   margin-bottom: 0.8rem;
-  font-size: 1.2rem;
+  font-size: 24px;
 }
 
 .item-com img {
   width: 100%;
-  height: auto;
-  max-height: 280px;
+  height: 280px;
+  max-height: 320px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
+  display: block;
 }
 
 .item-com p {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 24px;
+  line-height: 120%;
   color: #344924;
+  margin-top: 2rem;
 }
 
 .contacto {
@@ -588,7 +536,7 @@ h2 {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  text-align: justify;
+  text-align: left;
   transition: transform 0.3s;
   overflow: hidden;
 }
@@ -601,7 +549,7 @@ h2 {
 
 .card-contacto li {
   margin-bottom: 0.8rem;
-  line-height: 1.5;
+  line-height: 120%;
 }
 
 .mapa-contacto iframe {
@@ -612,19 +560,11 @@ h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.card-contacto h2 {
+.contacto h2 {
   color: #344924;
   margin-bottom: 1rem;
   text-shadow: none;
-  font-family:"Darker Grotesque", Helvetica !important;
-  font-weight: 700 !important;
-  font-size: 36px !important;
-}
-
-.contacto p {
-  font-size: 1.1rem;
-  color: #344924;
-  margin-bottom: 1.5rem;
+  font-size: 36px;
 }
 
 .qr-contacto {
@@ -664,9 +604,8 @@ h2 {
 .info-contacto {
   list-style: none;
   padding: 0;
-  font-size: 1rem;
-  color: #344924;
-  line-height: 1.8;
+  line-height: 120%;
+  width: min-content;
 }
 
 .info-contacto li {
@@ -674,7 +613,7 @@ h2 {
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 24px;
 }
 
 .info-contacto li img {
@@ -684,17 +623,13 @@ h2 {
 }
 
 .info-contacto li a {
-  font-family: "DM Sans", Helvetica !important;
-  font-weight: 400 !important;
-  font-size: 24px !important;
+  font-size: 24px;
   color: #344924;
   text-decoration: none;
 }
 
 .info-contacto li span {
-  font-family: "DM Sans", Helvetica !important;
-  font-weight: 400 !important;
-  font-size: 24px !important;
+  font-size: 24px;
   color: #344924;
   text-decoration: none;
 }
@@ -713,9 +648,7 @@ h2 {
 }
 
 .siguenos h2{
-  font-family: "Darker Grotesque", Helvetica !important;
-  font-weight: 700 !important;
-  font-size: 36px !important;
+  font-size: 36px;
   text-shadow: none;
 }
 
@@ -733,8 +666,8 @@ h2 {
 }
 
 .redes-sociales img {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -761,6 +694,7 @@ h2 {
 }
 
 .idioma-selector {
+  font-family: "Darker Grotesque", Helvetica;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -772,6 +706,7 @@ h2 {
   opacity: 0.7;
   transition: opacity 0.3s;
 }
+
 
 .idioma:hover,
 .idioma.activo {
@@ -787,18 +722,8 @@ footer {
   font-size: 0.9rem;
 }
 
-.galeria{
-  background-color: #f6f6f6;
-}
-
-.galeria h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #344924;
-}
-
 .carousel-wrapper {
-    overflow: hidden;
+  overflow: hidden;
   width: 100%;
   position: relative;
 }
@@ -825,7 +750,7 @@ footer {
 
 .carousel-card img {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -896,6 +821,11 @@ footer {
 @media (max-width: 768px) {
   .entidad-content {
     flex-direction: column;
+  }
+
+  .siguenos {
+    margin-left: 0px;
+    margin-top: 0px;
   }
 
   .entidad-texto,
