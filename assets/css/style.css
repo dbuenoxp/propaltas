@@ -34,10 +34,6 @@
   height: auto;
 }
 
-/* html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-} */
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -59,6 +55,12 @@ h1, h2{
   width: 100%;
   max-width: 1200px;
   margin: auto;
+  padding: 0 15px; 
+  /* width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; 
+  box-sizing: border-box; */
 }
 
 
@@ -100,8 +102,9 @@ header.hide-navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 0 15px;
   position: relative;
+  box-sizing: border-box;
 }
 
 
@@ -109,6 +112,7 @@ header.hide-navbar {
   height: 100px; 
   width: auto;
   display: block;
+  padding: 0 15px;
 }
 
 nav {
@@ -146,6 +150,13 @@ nav {
   font-size: 2rem;
   color: #96C063;
   cursor: pointer;
+  padding: 0 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Evita que las imágenes desborden */
 }
 
 /* Hero */
@@ -158,6 +169,7 @@ nav {
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
+  background-size: cover;
 }
 
 .hero,
@@ -819,6 +831,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+
   .entidad-content {
     flex-direction: column;
   }
@@ -838,9 +851,23 @@ footer {
     max-width: 100%;
     height: auto;
   }
+
+  .nav-links {
+    flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho de la pantalla */
+    box-sizing: border-box;
+  }
+
+  .menu-toggle {
+    display: block; /* Muestra el botón del menú en pantallas pequeñas */
+  }
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  }
+  
   .contacto-grid {
     grid-template-columns: 1fr;
   }
