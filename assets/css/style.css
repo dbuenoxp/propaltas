@@ -50,7 +50,7 @@
   }
   
   .hero-card {
-    margin-top: 50px !important;
+    margin-top: 100px !important;
   }
 
   .nosotros-img {
@@ -960,7 +960,7 @@ footer {
     grid-template-columns: 1fr;
   }
     .hero-card {
-      margin-top: 50px !important; /* Agregar margen superior en móviles */
+      margin-top: 100px !important;
     }
 }
 
