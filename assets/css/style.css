@@ -25,13 +25,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    /* outline: 1px solid rgba(255, 0, 0, 0.1);  */
+  /* outline: 1px solid rgba(255, 0, 0, 0.1);  */
 }
 
 .hero,
 .nosotros-img {
   min-height: 100vh;
   height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .nosotros-img {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #d3d6cf !important;
+  }
 }
 
 html{
@@ -59,11 +72,7 @@ h1, h2{
   max-width: 1200px;
   margin: auto;
   padding: 0 15px; 
-  /* width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px; 
-  box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 
@@ -132,6 +141,7 @@ nav {
   display: flex;
   gap: 80px;
   list-style: none;
+  margin-right: 19px;
 }
 
 .nav-links li a {
@@ -915,7 +925,7 @@ footer {
     position: absolute;
     top: 80px;
     right: 0;
-    width: 200px;
+    width: 215px;
     padding: 1rem;
     gap: 30px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);

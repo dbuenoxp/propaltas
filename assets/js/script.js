@@ -57,6 +57,23 @@ document.addEventListener("DOMContentLoaded", () => {
       track.style.transition = 'none';
       index = cards.length - 2;
       track.style.transform = `translateX(-${cardWidth * index}px)`;
+      // Lazy load backgrounds for .hero and .nosotros-img
+      setTimeout(() => {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+          hero.style.backgroundImage = "url('assets/images/paisaje.jpg')";
+          hero.style.backgroundPosition = 'center';
+          hero.style.backgroundRepeat = 'no-repeat';
+          hero.style.backgroundSize = 'cover';
+        }
+        const nosotrosImg = document.querySelector('.nosotros-img');
+        if (nosotrosImg) {
+          nosotrosImg.style.backgroundImage = "url('assets/images/1-slider.jpg')";
+          nosotrosImg.style.backgroundPosition = 'center';
+          nosotrosImg.style.backgroundRepeat = 'no-repeat';
+          nosotrosImg.style.backgroundSize = 'cover';
+        }
+      }, 400); // Delay to allow main content to load first
     }
     setTimeout(() => {
       track.style.transition = 'transform 0.5s ease-in-out';
