@@ -47,7 +47,7 @@
   .hero-card-img {
     height: 40vh !important;
     object-fit: cover;
-    margin-top: 30% !important;
+    margin-top: 10% !important;
   }
 
   .nosotros-img {
@@ -957,7 +957,7 @@ footer {
     grid-template-columns: 1fr;
   }
     .hero-card {
-      margin-top: 30% !important; /* Agregar margen superior en móviles */
+      margin-top: 10% !important; /* Agregar margen superior en móviles */
     }
 }
 
