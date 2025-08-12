@@ -66,10 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const startAutoplay = () => {
     if (autoplayInterval) return;
-    autoplayInterval = setInterval(() => {
-      index++;
+  autoplayInterval = setInterval(() => {
+    index++;
+    // Si el índice supera el máximo, reinícialo para evitar que el carrusel desaparezca
+    if (index >= cards.length) {
+      index = 1;
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${cardWidth * index}px)`;
+    } else {
       updateCarousel();
-    }, 3000);
+    }
+  }, 3000);
   };
 
   const stopAutoplay = () => {

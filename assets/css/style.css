@@ -735,9 +735,10 @@ footer {
 }
 
 .carousel-wrapper {
+   width: 100%;
+  max-width: 500px; /* Ajusta según tu diseño */
+  margin: 0 auto;
   overflow: hidden;
-  width: 100%;
-  position: relative;
 }
 /* 
 .carousel-track {
