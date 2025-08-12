@@ -112,7 +112,7 @@ header.hide-navbar {
   height: 100px; 
   width: auto;
   display: block;
-  padding: 0 15px;
+  padding: 5px 15px 5px 15px;
 }
 
 nav {
