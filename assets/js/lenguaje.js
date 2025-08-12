@@ -110,8 +110,8 @@
     document.querySelector('a[href="#comercializacion"]').textContent = t.comercializacion;
     document.querySelector('a[href="#contacto"]').textContent = t.contacto;
   
-    document.querySelector('#inicio .container h1').textContent = t.tituloPalta;
-    document.querySelector('#inicio .container p').textContent = t.heroTexto;
+    document.querySelector('#inicio2 .container h1').textContent = t.tituloPalta;
+    document.querySelector('#inicio2 .container p').textContent = t.heroTexto;
   
     document.querySelector('#nosotros h2').textContent = t.seccionNosotros;
     document.querySelector('#nosotros #textOne').textContent = t.nosotrostext;
