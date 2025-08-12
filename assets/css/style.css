@@ -51,6 +51,7 @@
   
   .hero-card {
     margin-top: 100px !important;
+    height: auto !important;
   }
 
   .nosotros-img {
@@ -211,7 +212,7 @@ img {
   box-shadow: none;
   border: none;
   background: none;
-  margin-top: 10% !important;
+  margin-top: 10%;
 }
 
 .hero-card-img {
@@ -964,6 +965,7 @@ footer {
   }
     .hero-card {
       margin-top: 100px !important;
+      height: auto !important;
     }
 }
 
