@@ -815,8 +815,7 @@ footer {
 }
 
 .carousel-wrapper {
-   width: 100%;
-  max-width: 500px; /* Ajusta según tu diseño */
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -1021,5 +1020,42 @@ footer {
   .topbar-content {
     flex-direction: column;
     align-items: flex-end;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .carousel-track {
+    width: 100% !important;
+    gap: 0 !important;
+    justify-content: flex-start !important;
+  }
+  .carousel-card {
+    flex: 0 0 100% !important;
+    padding: 0 !important;
+  }
+  .carousel-card img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: block;
+  }
+
+   .entidad-imagen {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    text-align: initial !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
   }
 }
