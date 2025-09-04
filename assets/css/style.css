@@ -1,3 +1,182 @@
+/* --- Card Contacto Moderno --- */
+.card-contacto {
+  /* background: linear-gradient(135deg, #e8f5e9 80%, #d3d6cf 100%); */
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(52,73,36,0.10), 0 1.5px 6px rgba(52,73,36,0.08);
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: visible;
+}
+.card-contacto:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 8px 32px rgba(52,73,36,0.16), 0 2px 8px rgba(52,73,36,0.10);
+}
+.contacto-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.contacto-icon-main {
+  background: #fff;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(52,73,36,0.10);
+}
+.contacto-icon-main img {
+  width: 32px;
+  height: 32px;
+}
+.contacto-titulo {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #344924;
+  margin: 0;
+  text-shadow: none;
+}
+.contacto-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contacto-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+.contacto-icon-circle {
+  background: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(52,73,36,0.08);
+  flex-shrink: 0;
+}
+.contacto-icon-circle img {
+  width: 22px;
+  height: 22px;
+}
+.contacto-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.contacto-label-text {
+  font-weight: 700;
+  color: #344924;
+  font-size: 1.08rem;
+  margin-bottom: 0.1rem;
+}
+.contacto-lista-simple {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.08rem;
+  color: #344924;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.contacto-lista-simple li a {
+  color: #344924;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contacto-lista-simple li a:hover {
+  color: #96C063;
+  text-decoration: underline;
+}
+.contacto-direccion {
+  font-size: 1.05rem;
+  color: #344924;
+  margin-bottom: 0.2rem;
+}
+.contacto-maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.05rem;
+  color: #344924;
+  margin-top: 0.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.contacto-maps-link img {
+  width: 20px;
+  height: 20px;
+}
+.contacto-maps-link:hover {
+  color: #96C063;
+}
+/* --- Contacto personalizado --- */
+.contacto-titulo {
+  margin-bottom: 18px;
+}
+
+.contacto-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contacto-label {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contacto-label-text {
+  font-weight: 600;
+}
+
+.contacto-item {
+  margin-left: 28px;
+  margin-bottom: 2px;
+}
+
+.contacto-item-mb {
+  margin-bottom: 10px;
+}
+
+.icono-contacto {
+  vertical-align: middle;
+  margin-right: 6px;
+  width: 24px;
+  height: 24px;
+}
+
+.qr-contacto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: auto;
+  aspect-ratio: 1/1;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qr-contacto-img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: block;
+}
 
 @font-face {
   font-family: 'Darker Grotesque';
@@ -640,7 +819,7 @@ h2 {
 }
 
 .card-contacto li {
-  margin-bottom: 0.8rem;
+  /* margin-bottom: 0.8rem; */
   line-height: 120%;
 }
 
@@ -659,11 +838,6 @@ h2 {
   font-size: 36px;
 }
 
-.qr-contacto {
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .qr-contacto:hover {
   transform: scale(1.02);
@@ -675,8 +849,7 @@ h2 {
   border: 2px dashed #ccc;
   border-radius: 8px;
   width: 100%;
-  height: 100%;
-  min-height: 300px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -684,9 +857,6 @@ h2 {
   color: #999;
 }
 
-.qr-placeholder::before {
-  content: "Código QR";
-}
 
 .card-contacto:hover {
   transform: scale(1.02);
@@ -704,7 +874,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   font-size: 24px;
 }
 
